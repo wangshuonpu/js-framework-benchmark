@@ -27,7 +27,7 @@ export default san.defineComponent({
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>san v3.7.1 (non-keyed)</h1>
+                    <h1>san v3.7.1 (keyed)</h1>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -55,7 +55,7 @@ export default san.defineComponent({
         </div>
         <table class="table table-hover table-striped test-data" on-click="handleClick($event)">
             <tbody>
-                <tr s-for="item in rows" class="{{item.id === selected? 'danger':''}}">
+                <tr s-for="item in rows trackBy item.id" class="{{item.id === selected? 'danger':''}}">
                     <td class="col-md-1">{{item.id}}</td>
                     <td class="col-md-4">
                         <a data-action="select" data-id="{{item.id}}">{{item.label}}</a>
@@ -83,7 +83,11 @@ export default san.defineComponent({
         }
     },
     attached() {
-        window.app = this;
+        window.app = this
+        // console.log(this.aNode)
+    },
+    ccc(){
+        console.log(this.data.get(''));
     },
     add() {
         startMeasure("add");

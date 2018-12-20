@@ -27,7 +27,7 @@ export default san.defineComponent({
         <div class="jumbotron">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>san v3.7.1 (non-keyed)</h1>
+                    <h1>san v3.6.3 (non-keyed)</h1>
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -83,7 +83,11 @@ export default san.defineComponent({
         }
     },
     attached() {
-        window.app = this;
+        window.app = this
+        // console.log(this.aNode)
+    },
+    ccc(){
+        console.log(this.data.get(''));
     },
     add() {
         startMeasure("add");
